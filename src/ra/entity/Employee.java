@@ -106,30 +106,30 @@ public class Employee implements IApp{
     @Override
     public void inputData(Scanner scanner){
         employeeId = inputEmployeeId(scanner);
-        employeeName = Validator.isInputString(scanner, "Nhập vào tên nhân viên");
+        employeeName = Validator.isInputString(scanner, "Nhập vào tên nhân viên : ");
         birthday = inputBirthday(scanner);
         phoneNumber = inputPhoneNumber(scanner);
-        sex = Validator.isInputBoolean(scanner, "Nhập vào giới tính (true:nam, false:nữ)");
-        coeffiecnt = Validator.isInputFloat(scanner,"Nhập vào hệ số lượng",0);
-        allowanceSalary = Validator.isInputInt(scanner, "Nhập vào phụ cấp lương",0);
-        department =  Validator.isInputString(scanner, "Nhập vào tên phòng ban");
-        status =  Validator.isInputInt(scanner, "Nhập vào trạng thái (1:Đang làm việc, 2:Đang nghỉ phép, 3: Đã nghỉ việc)",0);
+        sex = Validator.isInputBoolean(scanner, "Nhập vào giới tính (true:nam, false:nữ) : ");
+        coeffiecnt = Validator.isInputFloat(scanner,"Nhập vào hệ số lượng : ",0);
+        allowanceSalary = Validator.isInputInt(scanner, "Nhập vào phụ cấp lương : ",0);
+        department =  Validator.isInputString(scanner, "Nhập vào tên phòng ban : ");
+        status =  Validator.isInputInt(scanner, "Nhập vào trạng thái (1:Đang làm việc, 2:Đang nghỉ phép, 3: Đã nghỉ việc) : ",0);
 
     }
 
 
     public String inputEmployeeId(Scanner scanner){
         String regex = "['NV']\\w{4}";
-        return Validator.validatePattern(scanner, "Nhập vào mã nhân viên",regex);
+        return Validator.validatePattern(scanner, "Nhập vào mã nhân viên : ",regex);
     }
 
     public String inputBirthday(Scanner scanner){
         String regex = "\\d{2}/\\d{2}/\\d{4}";
-        return Validator.validatePattern(scanner, "Nhập vào ngày sinh (dd/mm/yyyy)",regex);
+        return Validator.validatePattern(scanner, "Nhập vào ngày sinh (dd/mm/yyyy) : ",regex);
     }
     public String inputPhoneNumber(Scanner scanner){
         String regex = "\\d{10}";
-        return Validator.validatePattern(scanner, "Nhập vào số điện thoại",regex);
+        return Validator.validatePattern(scanner, "Nhập vào số điện thoại : ",regex);
     }
 
 
